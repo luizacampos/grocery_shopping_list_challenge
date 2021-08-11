@@ -26,9 +26,7 @@ mongoose
     .catch((error) => console.log(error, "Database did not connect! ☹️❌"));
 
 app.get("*", (req, res) => {
-    res.sendFile(
-        path.join(__dirname, "../client", "../build", "../index.html")
-    );
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 app.listen(PORT, () => console.log(`The server is listening at ${PORT} 👽`));
