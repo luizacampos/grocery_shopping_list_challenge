@@ -1,5 +1,5 @@
 {
-    "name": "shopping-list",
+    "name": "grocery_shopping_list_challenge",
     "version": "1.0.0",
     "description": "",
     "main": "server.js",

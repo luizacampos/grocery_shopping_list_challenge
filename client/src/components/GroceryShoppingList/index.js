@@ -54,7 +54,7 @@ export default function GroceryShoppingList() {
     };
 
     return (
-        <>
+        <div>
             <header className="header">
                 <h1>Grocery List</h1>
             </header>
@@ -69,6 +69,6 @@ export default function GroceryShoppingList() {
                     />
                 ))}
             </section>
-        </>
+        </div>
     );
 }
