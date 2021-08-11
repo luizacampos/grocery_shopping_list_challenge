@@ -13,9 +13,7 @@ export default function GroceryShoppingList() {
 
     const getItems = async () => {
         try {
-            let res = await axios.get(
-                `${process.env.REACT_APP_GROCERY_URL}/list/getAllItems`
-            );
+            let res = await axios.get("/list/getAllItems");
 
             if (res.status === 200) {
                 //console.log(res.data);
@@ -28,9 +26,7 @@ export default function GroceryShoppingList() {
 
     const deleteItems = async (id) => {
         try {
-            let res = await axios.delete(
-                `${process.env.REACT_APP_GROCERY_URL}/list/deleteItem/${id}`
-            );
+            let res = await axios.delete(`/list/deleteItem/${id}`);
 
             if (res.status === 200) {
                 getItems();
@@ -42,15 +38,12 @@ export default function GroceryShoppingList() {
 
     const updateItems = async (id, itemName, quantity, priority, category) => {
         try {
-            const res = await axios.put(
-                `${process.env.REACT_APP_GROCERY_URL}/list/updateItem/${id}`,
-                {
-                    item_name: itemName,
-                    quantity: quantity,
-                    priority: priority,
-                    category: category,
-                }
-            );
+            const res = await axios.put(`/list/updateItem/${id}`, {
+                item_name: itemName,
+                quantity: quantity,
+                priority: priority,
+                category: category,
+            });
 
             if (res.status === 200) {
                 getItems();

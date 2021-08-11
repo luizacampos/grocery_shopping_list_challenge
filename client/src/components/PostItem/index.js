@@ -19,10 +19,7 @@ export default function PostItem({ onAdd }) {
         e.preventDefault();
 
         try {
-            const res = await axios.post(
-                `${process.env.REACT_APP_GROCERY_URL}/list/createListItem`,
-                itemToPost
-            );
+            const res = await axios.post("/list/createListItem", itemToPost);
 
             if (res.status === 200) {
                 console.log("Message created");
