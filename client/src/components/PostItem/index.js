@@ -20,7 +20,7 @@ export default function PostItem({ onAdd }) {
 
         try {
             const res = await axios.post(
-                "http://localhost:3001/list/createListItem",
+                `${process.env.REACT_APP_GROCERY_URL}/list/createListItem`,
                 itemToPost
             );
 
