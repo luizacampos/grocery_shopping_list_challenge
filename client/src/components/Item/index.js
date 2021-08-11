@@ -14,6 +14,7 @@ export default function Item({ item, onDelete, onUpdate }) {
     const handleUpdate = (e) => {
         e.preventDefault();
         onUpdate(item._id, itemName, quantity, priority, category);
+        window.location.reload();
     };
 
     return (

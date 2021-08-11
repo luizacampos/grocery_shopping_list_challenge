@@ -4,11 +4,10 @@ import axios from "axios";
 
 export default function PostItem({ onAdd }) {
     const [itemName, setItemName] = useState("");
-    const [category, setCategory] = useState("");
+    const [category, setCategory] = useState("Dairy");
     const [quantity, setQuantity] = useState(1);
     const [priority, setPriority] = useState(5);
 
-    //const { handlePostItem } = useContext(Context);
     const itemToPost = {
         item_name: itemName,
         quantity: quantity,
@@ -34,7 +33,7 @@ export default function PostItem({ onAdd }) {
                 setPriority(5);
             }
         } catch (error) {
-            console.log("Something went wrong", error.res);
+            console.log("Something went wrong", error.response);
         }
     };
 
@@ -107,34 +106,3 @@ export default function PostItem({ onAdd }) {
         </form>
     );
 }
-
-/* 
- const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        const itemToPost = {
-            item_name: itemName,
-            quantity: quantity,
-            priority: priority,
-            category: category,
-        };
-
-        try {
-            const res = await axios.post(
-                "http://localhost:3001/list/createListItem",
-                itemToPost
-            );
-
-            if (res.status === 200) {
-                console.log("Message created");
-                handlePostItem();
-                setItemName("");
-                setCategory("");
-                setQuantity(1);
-                setPriority(5);
-            }
-        } catch (error) {
-            console.log("Something went wrong", error.res);
-        }
-    };
-*/
